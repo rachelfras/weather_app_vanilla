@@ -1,1 +1,22 @@
+ul {
+  list-style: none;
+  padding-left: 0;
+}
 
+.widget {
+  background: linear-gradient(to bottom right, #e4f4ff, #fff);
+  border-radius: 2px 2px 20px 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 40px;
+  max-width: 600px;
+}
+
+.current-weather {
+  padding: 20px 15px 20px 15px;
+}
+
+.temp-box {
+  background: #fff;
+  border-radius: 2px 2px 10px 10px;
+  box-shadow: 4px 4px 4px rgba(71, 29, 29, 0.05);
+}
