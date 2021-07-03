@@ -11,6 +11,12 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -25,15 +31,16 @@
                 <div class="row">
                   <div class="col-6">
                     <h1>12°C</h1>
-                    <h2>13°/3°</h2>
+                    <hr />
+                    <p>13°/3°</p>
                   </div>
                   <div class="col-6">
                     <h1>Sun</h1>
                   </div>
                 </div>
-                <ul>
-                  <li>celsius</li>
-                  <li>fahrenheit</li>
+                <ul class="measurement-links">
+                  <li class="metric measurement">celsius</li>
+                  <li class="imperial measurement">fahrenheit</li>
                 </ul>
               </div>
             </div>

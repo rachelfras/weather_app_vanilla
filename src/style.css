@@ -1,6 +1,24 @@
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.temp-box h1 {
+  font-size: 50px;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
+}
+
+hr {
+  margin: 0;
 }
 
 .widget {
@@ -19,4 +37,16 @@ ul {
   background: #fff;
   border-radius: 2px 2px 10px 10px;
   box-shadow: 4px 4px 4px rgba(71, 29, 29, 0.05);
+  padding: 10px;
+}
+
+.measurement-links {
+  margin: 26px;
+}
+
+.measurement {
+  color: #646464;
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 auto;
 }
