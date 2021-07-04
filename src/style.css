@@ -38,12 +38,33 @@ p {
   font-size: 18px;
 }
 
+button {
+  width: 85px;
+}
+
 .widget {
   background: linear-gradient(to bottom right, #e4f4ff, #fff);
   border-radius: 2px 2px 20px 20px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
   max-width: 600px;
+}
+
+.form-control {
+  border-bottom-left-radius: 0;
+  line-height: 2.4em;
+}
+
+.search {
+  background: #888888a1;
+  color: #fff;
+}
+
+.current {
+  border-bottom-right-radius: 0;
+
+  background: #fff0b3;
+  color: #646464;
 }
 
 .current-weather {
