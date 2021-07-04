@@ -17,8 +17,25 @@ ul {
   padding-left: 0;
 }
 
+.measurement-links {
+  margin: 0;
+  text-align: center;
+}
+
+ul .measurement {
+  color: #646464;
+  display: inline-block;
+  font-size: 14px;
+  padding: 0 24px 0 24px;
+}
+
 hr {
   margin: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 18px;
 }
 
 .widget {
@@ -40,13 +57,18 @@ hr {
   padding: 10px;
 }
 
-.measurement-links {
-  margin: 26px;
+.location-display {
+  padding-top: 18px;
+  text-align: right;
 }
 
-.measurement {
-  color: #646464;
-  display: inline-block;
-  font-size: 14px;
-  margin: 0 auto;
+.date-time {
+  font-size: 24px;
+  font-weight: 300;
+  text-align: right;
+}
+
+.extra-info {
+  padding: 5px 0 0 10px;
+  font-size: 16px;
 }
