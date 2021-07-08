@@ -19,15 +19,23 @@ let currentTime = `${hour}:${minutes}`;
 callDate();
 
 function displayCityTemp(response){
-    let temp = Math.round(response.data.main.temp);
     let bigTemp = document.querySelector("#big-temp");
+    let liveMax = document.querySelector("#max");
+    let liveMin = document.querySelector("#min");
     let city = document.querySelector(".location-display");
     let liveDescription = document.querySelector("#description");
+    let liveHumidity = document.querySelector("#humidity");
+    let liveWind = document.querySelector("#wind");
     let iconElement = document.querySelector("#icon");
 
-    bigTemp.innerHTML = temp;
+    console.log(response.data);
+    bigTemp.innerHTML = Math.round(response.data.main.temp);
+    liveMax.innerHTML = Math.round(response.data.main.temp_max);
+    liveMin.innerHTML = Math.round(response.data.main.temp_min);
     city.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
     liveDescription.innerHTML = response.data.weather[0].main;
+    liveHumidity.innerHTML = response.data.main.humidity;
+    liveWind.innerHTML = Math.round(response.data.wind.speed);
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
