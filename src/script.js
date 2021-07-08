@@ -22,11 +22,12 @@ function displayCityTemp(response){
     let temp = Math.round(response.data.main.temp);
     let bigTemp = document.querySelector("#big-temp");
     let city = document.querySelector(".location-display");
-    
+    let iconElement = document.querySelector("#icon");
+    //let iconCode = response.data.weather[0].icon;
 
     bigTemp.innerHTML = temp;
     city.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
-    
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function search(city) {
