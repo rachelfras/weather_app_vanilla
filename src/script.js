@@ -28,7 +28,10 @@ function displayCityTemp(response){
     let liveWind = document.querySelector("#wind");
     let iconElement = document.querySelector("#icon");
 
-    console.log(response.data);
+    celsiusTempMain = response.data.main.temp;
+    celsiusTempMax = response.data.main.temp_max;
+    celsiusTempMax = response.data.main.temp_min;
+
     bigTemp.innerHTML = Math.round(response.data.main.temp);
     liveMax.innerHTML = Math.round(response.data.main.temp_max);
     liveMin.innerHTML = Math.round(response.data.main.temp_min);
@@ -70,9 +73,40 @@ function searchGeolocation(event) {
 let form = document.querySelector("#search-bar");
 form.addEventListener("submit", handleSubmit);
 
-
 let currentCity = document.querySelector(".current");
 currentCity.addEventListener("click", searchGeolocation);
+
+function switchMetric(event) {
+    event.preventDefault();
+    let tempMain = document.querySelector("#big-temp");
+    let tempMax = document.querySelector("#max");
+    let tempMin = document.querySelector("#min");
+    tempMain.innerHTML = Math.round(celsiusTempMain);
+    tempMax.innerHTML = Math.round(celsiusTempMain);
+    tempMin.innerHTML = Math.round(celsiusTempMain);
+}
+
+function switchImperial(event) {
+    event.preventDefault();
+    let tempMain = document.querySelector("#big-temp");
+    let tempMax = document.querySelector("#max");
+    let tempMin = document.querySelector("#min");
+    let imperialResultMain = (celsiusTempMain * 9) / 5 + 32;
+    let imperialResultMax = (celsiusTempMax * 9) / 5 + 32;
+    let imperialResultMin = (celsiusTempMin * 9) / 5 + 32;
+    tempMain.innerHTML = Math.round(imperialResultMain);
+    tempMax.innerHTML = Math.round(imperialResultMax); 
+    tempMin.innerHTML = Math.round(imperialResultMin);     
+}
+
+let celsiusTempMain = null;
+let celsiusTempMax = null;
+let celsiusTempMin = null;
+let metricLink = document.querySelector(".metric");
+let imperialLink = document.querySelector(".imperial");
+
+metricLink.addEventListener("click", switchMetric);
+imperialLink.addEventListener("click", switchImperial);
 
 search("Tokyo");
 
