@@ -1,5 +1,3 @@
-let apiKey = `fa1047ba99073894a88e54f4a5673a70`;
-
 function callDate(){
     let displayDay = document.querySelector("#weekday");
     displayDay.innerHTML = currentDay;
@@ -7,16 +5,6 @@ function callDate(){
     let displayTime = document.querySelector("#time");
     displayTime.innerHTML = currentTime;  
 }
-
-let rightNow = new Date();
-
-let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-let currentDay = weekdays[rightNow.getDay()];
-let hour = `0${rightNow.getHours()}`.slice(-2);
-let minutes = `0${rightNow.getMinutes()}`.slice(-2);
-let currentTime = `${hour}:${minutes}`;
-
-callDate();
 
 function displayCityTemp(response){
     let bigTemp = document.querySelector("#big-temp");
@@ -70,12 +58,6 @@ function searchGeolocation(event) {
     navigator.geolocation.getCurrentPosition(giveCurrent);
 }
 
-let form = document.querySelector("#search-bar");
-form.addEventListener("submit", handleSubmit);
-
-let currentCity = document.querySelector(".current");
-currentCity.addEventListener("click", searchGeolocation);
-
 function switchMetric(event) {
     event.preventDefault();
     let tempMain = document.querySelector("#big-temp");
@@ -99,6 +81,20 @@ function switchImperial(event) {
     tempMin.innerHTML = Math.round(imperialResultMin);     
 }
 
+let apiKey = `fa1047ba99073894a88e54f4a5673a70`;
+let rightNow = new Date();
+
+let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let currentDay = weekdays[rightNow.getDay()];
+let hour = `0${rightNow.getHours()}`.slice(-2);
+let minutes = `0${rightNow.getMinutes()}`.slice(-2);
+let currentTime = `${hour}:${minutes}`;
+
+let form = document.querySelector("#search-bar");
+let currentCity = document.querySelector(".current");
+form.addEventListener("submit", handleSubmit);
+currentCity.addEventListener("click", searchGeolocation);
+
 let celsiusTempMain = null;
 let celsiusTempMax = null;
 let celsiusTempMin = null;
@@ -108,6 +104,7 @@ let imperialLink = document.querySelector(".imperial");
 metricLink.addEventListener("click", switchMetric);
 imperialLink.addEventListener("click", switchImperial);
 
+callDate();
 search("Tokyo");
 
 
