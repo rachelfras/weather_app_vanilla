@@ -71,6 +71,11 @@ button {
   padding: 10px;
 }
 
+#icon {
+  position: relative;
+  top: -10px;
+}
+
 .location-display {
   padding-top: 18px;
   text-align: right;
