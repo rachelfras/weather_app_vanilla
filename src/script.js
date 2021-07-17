@@ -10,6 +10,7 @@ function findFuture() {
     let forecastElement = document.querySelector("#forecast-box");
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
     let forecastHTML = `<div class="row">`;
+    console.log(days);
     
     days.forEach(function (day) {
     forecastHTML = forecastHTML +
@@ -30,8 +31,7 @@ function findFuture() {
       `;
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
-    });
-    
+    });  
 }
 
 function displayCityTemp(response){
