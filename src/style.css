@@ -42,6 +42,7 @@ button {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
   max-width: 600px;
+  padding-bottom: 2px;
 }
 
 .form-control {
@@ -96,6 +97,27 @@ button {
 .extra-info {
   padding: 5px 0 0 10px;
   font-size: 16px;
+}
+
+.future-forecast {
+  background: #e4f4ff;
+  border: 0;
+  border-radius: 4px;
+  max-width: 80px;
+  margin: 10px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.future-forecast p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  margin-bottom: -8px;
+  text-align: center;
+}
+
+#forecast-min {
+  color: #646464;
 }
 
 .credit {
