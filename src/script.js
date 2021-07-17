@@ -29,8 +29,7 @@ function findFuture() {
                  class="future-icon">
         </div>
       `;
-    forecastHTML = forecastHTML + `</div>`;
-    forecastElement.innerHTML = forecastHTML;
+    forecastElement.innerHTML = forecastHTML + `</div>`;
     });  
 }
 
