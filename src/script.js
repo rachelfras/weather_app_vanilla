@@ -8,9 +8,9 @@ function callDate(){
 
 function findFuture() {
     let forecastElement = document.querySelector("#forecast-box");
-
-    let forecastHTML = `<div class="row">`;
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+    let forecastHTML = `<div class="row">`;
+    
     days.forEach(function (day) {
     forecastHTML = forecastHTML +
       `
