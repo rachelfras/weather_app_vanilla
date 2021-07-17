@@ -6,6 +6,34 @@ function callDate(){
     displayTime.innerHTML = currentTime;  
 }
 
+function findFuture() {
+    let forecastElement = document.querySelector("#forecast-box");
+
+    let forecastHTML = `<div class="row">`;
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+    days.forEach(function (day) {
+    forecastHTML = forecastHTML +
+      `
+        <div class="col-2 forecast-box-display">
+            <div class="forecast-day">${day}</div>
+            <div class="future-numbers">
+              <span id="forcast-max"
+               >18°</span>
+               <span id="forecast-min"
+               >16°</span>
+            </div>
+            <img src="http://openweathermap.org/img/wn/02d@2x.png" 
+                 alt="weather icon"
+                 width="54"
+                 class="future-icon">
+        </div>
+      `;
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+    });
+    
+}
+
 function displayCityTemp(response){
     let bigTemp = document.querySelector("#big-temp");
     let liveMax = document.querySelector("#max");
@@ -28,6 +56,8 @@ function displayCityTemp(response){
     liveHumidity.innerHTML = response.data.main.humidity;
     liveWind.innerHTML = Math.round(response.data.wind.speed);
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+    findFuture();
 }
 
 function search(city) {
