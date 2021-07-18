@@ -6,42 +6,48 @@ function callDate(){
     displayTime.innerHTML = currentTime;  
 }
 
-function displayFuture(response) {
-    console.log(response.data);
+function formatDayDisplay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let numericDay = date.getDay();
+    let weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return weekday[numericDay];
 }
 
-function callFuture(coordinates) {
-    let lat = coordinates.lat;
-    let lon = coordinates.lon;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&unitsmetric&appid=${apiKey}`;
-
-    axios.get(apiUrl).then(displayFuture);
-}
-
-function findFuture() {
+function showFuture(response) {
+    let dailyForecast = response.data.daily;
     let forecastElement = document.querySelector("#forecast-box");
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
     let forecastHTML = `<div class="row">`;
     
-    days.forEach(function (day) {
-    forecastHTML = forecastHTML +
+    dailyForecast.forEach(function (future, index) {
+      if (index < 6) {
+     forecastHTML = forecastHTML +
       `
         <div class="col-2 forecast-box-display">
-            <div class="forecast-day">${day}</div>
+            <div class="forecast-day">${formatDayDisplay(future.dt)}</div>
             <div class="future-numbers">
               <span id="forcast-max"
-               >18°</span>
+               >${Math.round(future.temp.max)}°</span>
                <span id="forecast-min"
-               >16°</span>
+               >${Math.round(future.temp.min)}°</span>
             </div>
-            <img src="http://openweathermap.org/img/wn/02d@2x.png" 
+            <img src="http://openweathermap.org/img/wn/${future.weather[0].icon}@2x.png" 
                  alt="weather icon"
                  width="54"
                  class="future-icon">
         </div>
       `;
     forecastElement.innerHTML = forecastHTML + `</div>`;
-    });  
+      };
+    });
+}
+
+function callFuture(coordinates) {
+    let lat = coordinates.lat;
+    let lon = coordinates.lon;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${apiKey}`;
+
+    axios.get(apiUrl).then(showFuture);
 }
 
 function displayCityTemp(response){
@@ -68,7 +74,6 @@ function displayCityTemp(response){
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
     callFuture(response.data.coord);
-    findFuture();
 }
 
 function search(city) {
