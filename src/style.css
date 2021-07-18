@@ -6,6 +6,7 @@ h1,
 h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 p {
@@ -24,11 +25,10 @@ button {
 
 .widget {
   background: linear-gradient(to bottom right, #e4f4ff, #fff);
-  border-radius: 2px 2px 20px 20px;
+  border-radius: 2px 2px 14px 14px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
   max-width: 600px;
-  padding-bottom: 2px;
 }
 
 .enter {
@@ -101,12 +101,10 @@ hr {
 }
 
 .forecast-box-display {
-  background: #e4f4ff;
-  border: 0;
-  border-radius: 4px;
+  background: #e4f4ffe3;
+  border: 1px solid #fefefe;
+  border-radius: 14px;
   font-size: 14px;
-  max-width: 70px;
-  margin: 5px;
   padding: 5px 5px 0 5px;
   text-align: center;
 }
