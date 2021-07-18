@@ -6,11 +6,22 @@ function callDate(){
     displayTime.innerHTML = currentTime;  
 }
 
+function displayFuture(response) {
+    console.log(response.data);
+}
+
+function callFuture(coordinates) {
+    let lat = coordinates.lat;
+    let lon = coordinates.lon;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&unitsmetric&appid=${apiKey}`;
+
+    axios.get(apiUrl).then(displayFuture);
+}
+
 function findFuture() {
     let forecastElement = document.querySelector("#forecast-box");
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
     let forecastHTML = `<div class="row">`;
-    console.log(days);
     
     days.forEach(function (day) {
     forecastHTML = forecastHTML +
@@ -56,6 +67,7 @@ function displayCityTemp(response){
     liveWind.innerHTML = Math.round(response.data.wind.speed);
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
+    callFuture(response.data.coord);
     findFuture();
 }
 
