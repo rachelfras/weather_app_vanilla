@@ -9,7 +9,7 @@ h2 {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-p {
+section p {
   margin: 0;
   font-size: 18px;
 }
@@ -28,11 +28,12 @@ button {
   border-radius: 2px 2px 14px 14px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
-  max-width: 600px;
+  width: 540px;
 }
 
 .enter {
   border-bottom-left-radius: 0;
+  height: 56px;
   padding: 26px 0 26px 16px;
 }
 
@@ -68,9 +69,9 @@ button {
   padding: 10px;
 }
 
-#icon {
-  position: relative;
-  top: -10px;
+.icon-display {
+  margin: 4px 0 0 12px;
+  width: 68px;
 }
 
 .temp-box h1 {
@@ -88,13 +89,13 @@ hr {
 }
 
 .location-display {
-  font-size: 26px;
+  font-size: 28px;
   padding-top: 18px;
   text-align: right;
 }
 
 .date-time {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
   text-align: right;
 }
@@ -130,8 +131,7 @@ hr {
 }
 
 .future-icon {
-  position: relative;
-  top: -5px;
+  margin-bottom: 5px;
 }
 
 .credit {
