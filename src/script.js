@@ -31,9 +31,9 @@ function showFuture(response) {
                <span id="forecast-min"
                >${Math.round(future.temp.min)}°</span>
             </div>
-            <img src="http://openweathermap.org/img/wn/${future.weather[0].icon}@2x.png" 
-                 alt="weather icon"
-                 width="54"
+            <img src="src/icons/${future.weather[0].icon}.svg" 
+                 alt="${future.weather[0].description}"
+                 width="42"
                  class="future-icon">
         </div>
       `;
@@ -71,7 +71,8 @@ function displayCityTemp(response){
     liveDescription.innerHTML = response.data.weather[0].main;
     liveHumidity.innerHTML = response.data.main.humidity;
     liveWind.innerHTML = Math.round(response.data.wind.speed);
-    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("src", `src/icons/${(response.data.weather[0].icon)}.svg`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
 
     callFuture(response.data.coord);
 }
