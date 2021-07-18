@@ -1,5 +1,6 @@
 body {
   font-family: "Quicksand", sans-serif;
+  font-size: 14px;
 }
 
 h1,
@@ -18,10 +19,6 @@ section p {
 ul {
   list-style: none;
   padding-left: 0;
-}
-
-button {
-  width: 85px;
 }
 
 .widget {
@@ -44,17 +41,16 @@ button {
   padding: 26px 0 26px 16px;
 }
 
-.search {
+.search,
+.current {
   background: #ffefe4;
   color: #646464;
   min-width: 90px;
+  width: 85px;
 }
 
 .current {
-  background: #ffefe4;
   border-bottom-right-radius: 0;
-  color: #646464;
-  min-width: 90px;
 }
 
 .search:hover,
@@ -82,12 +78,6 @@ button {
 
 .temp-box h1 {
   font-size: 50px;
-}
-
-.temp-box a {
-  color: #646464;
-  font-size: 14px;
-  padding: 0 20px 0 20px;
 }
 
 hr {
@@ -121,14 +111,12 @@ hr {
   background: #e4f4ffe3;
   border: 1px solid #fefefe;
   border-radius: 14px;
-  font-size: 14px;
   padding: 5px 5px 0 5px;
   text-align: center;
 }
 
 .future-numbers {
   font-family: "Montserrat", sans-serif;
-  font-size: 14px;
   text-align: center;
 }
 
@@ -141,7 +129,6 @@ hr {
 }
 
 .credit {
-  font-size: 14px;
   padding-top: 6px;
   position: relative;
   left: 28px;
