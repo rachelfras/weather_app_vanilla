@@ -116,4 +116,4 @@ form.addEventListener("submit", handleSubmit);
 currentCity.addEventListener("click", searchGeolocation);
 
 callDate();
-search("Paris");
+search("Glasgow");
