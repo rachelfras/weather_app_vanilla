@@ -37,14 +37,24 @@ button {
 }
 
 .search {
-  background: #888888a1;
-  color: #fff;
+  background: #ffefe4;
+  border: 1px solid #ced4da;
+  color: #646464;
+  min-width: 90px;
 }
 
 .current {
+  background: #ffefe4;
   border-bottom-right-radius: 0;
-  background: #fff0b3;
+  border: 1px solid #ced4da;
   color: #646464;
+  min-width: 90px;
+}
+
+.search:hover,
+.current:hover {
+  background: #ffe0cb;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .current-weather {
