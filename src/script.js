@@ -20,7 +20,7 @@ function showFuture(response) {
     let forecastHTML = `<div class="row">`;
     
     dailyForecast.forEach(function (future, index) {
-      if (index < 6) {
+      if (index > 0 && index < 7) {
      forecastHTML = forecastHTML +
       `
         <div class="col-2 forecast-box-display">
