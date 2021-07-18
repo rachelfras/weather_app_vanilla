@@ -1,9 +1,23 @@
 function callDate(){
-    let displayDay = document.querySelector("#weekday");
-    displayDay.innerHTML = currentDay;
+ //   let displayDay = document.querySelector("#weekday");
+ //   displayDay.innerHTML = currentDay;
 
     let displayTime = document.querySelector("#time");
     displayTime.innerHTML = currentTime;  
+}
+
+function showDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let numericDay = date.getDay();
+    let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let displayDay = document.querySelector("#weekday");
+    displayDay.innerHTML = weekday[numericDay];
+}
+
+function showTime(offset) {
+    let difference = (offset / 60);
+    console.log(difference);
 }
 
 function formatDayDisplay(timestamp) {
@@ -40,12 +54,14 @@ function showFuture(response) {
     forecastElement.innerHTML = forecastHTML + `</div>`;
       };
     });
+    showDay(response.data.current.dt);
+    showTime(response.data.timezone_offset);
 }
 
 function callFuture(coordinates) {
     let lat = coordinates.lat;
     let lon = coordinates.lon;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${apiKey}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${apiKey}`;
 
     axios.get(apiUrl).then(showFuture);
 }
@@ -151,7 +167,7 @@ metricLink.addEventListener("click", switchMetric);
 imperialLink.addEventListener("click", switchImperial);
 
 callDate();
-search("Tokyo");
+search("Paris");
 
 
 
