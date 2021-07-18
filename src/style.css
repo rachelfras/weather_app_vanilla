@@ -31,6 +31,12 @@ button {
   width: 540px;
 }
 
+.enter,
+.search,
+.current {
+  border: 1px solid #a3d4f7;
+}
+
 .enter {
   border-bottom-left-radius: 0;
   height: 56px;
@@ -39,7 +45,6 @@ button {
 
 .search {
   background: #ffefe4;
-  border: 1px solid #ced4da;
   color: #646464;
   min-width: 90px;
 }
@@ -47,7 +52,6 @@ button {
 .current {
   background: #ffefe4;
   border-bottom-right-radius: 0;
-  border: 1px solid #ced4da;
   color: #646464;
   min-width: 90px;
 }
@@ -55,6 +59,7 @@ button {
 .search:hover,
 .current:hover {
   background: #ffe0cb;
+  border: 1px solid #84acc9;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
